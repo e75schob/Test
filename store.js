@@ -1,5 +1,59 @@
 
+//Javascript to send the form from client to server.  Use fetch API to POST our form data to our server.
+//get the form by its id
+const form = document.getElementById("contact-form");
 
+//when event is triggered, create FormData object called mail based on the input values and name attributes in the form
+//1.
+const formEvent = form.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+
+  let mail = new FormData(form);
+
+  //3.
+  sendMail(mail);
+})
+
+//sendMail function, supply base url that deploys app with /send for the fetch().  Specify method as post since we send data, not getting, specify body as mail since we send this data in our request
+
+const sendMail = (mail) => {
+  //1.
+  fetch("https://nodemailer-vic-lo.herokuapp.com/send", {
+    method: "post", //2.
+    body: mail, //3.
+
+  }).then((response) => {
+    return response.json();
+  });
+};
+
+
+
+
+
+
+//Javascript for hamburger menu
+
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+hamburger.addEventListener("click", mobileMenu);
+
+function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+}
+
+
+const navLink = document.querySelectorAll(".nav-link");
+
+navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+}
 //encodeURIComponent method look into if percentage symbol needs?
 
 const uri = ':$';
@@ -586,27 +640,6 @@ function removeCartItem(event) {
 
   
 
-//Javascript for hamburger menu
-
-const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".nav-menu");
-
-hamburger.addEventListener("click", mobileMenu);
-
-function mobileMenu() {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
-}
-
-
-const navLink = document.querySelectorAll(".nav-link");
-
-navLink.forEach(n => n.addEventListener("click", closeMenu));
-
-function closeMenu() {
-    hamburger.classList.remove("active");
-    navMenu.classList.remove("active");
-}
 
 
 

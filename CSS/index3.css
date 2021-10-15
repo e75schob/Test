@@ -28,13 +28,13 @@ a {
 /* Style Header Section and navbar*/
 
 .header {
-border-bottom: 1 px solid black;
+border-bottom: 1 px solid #E2E8F0;
 
 }
 
 .navbar{
 display: flex;
-justify-content: space-between;
+justify-content: flex-start;
 align-items: center;
 padding: 1rem 1.5rem;
  }
@@ -94,7 +94,7 @@ color: #CC4C4C;
   .nav-menu {
       position: fixed;
       left: -100%;
-      top: 5rem;
+      top: 18rem;
       flex-direction: column;
       background-color: black;
       width: 100%;
@@ -107,6 +107,7 @@ color: #CC4C4C;
 
   .nav-menu.active {
       left: 0;
+      
   }
 
   .nav-item {
@@ -135,11 +136,69 @@ color: #CC4C4C;
 }
 
 
+/*Contact Section*/
 
+.container5{
 
+  width: 525px;
+  background: rgb(0,0,0);
+  /* Center the form on the page */
+  margin: 0 auto;
+  /* Form outline */
+padding: 5px;
+border: 1px solid #CCC;
+border-radius: 1px;
+}
 
+form h1{
+  color:white;
+  text-align: center;
+  margin: 5px;
 
+}
 
+.inp{
+
+  margin: 10px 25px;
+}
+
+input{
+  color: white;
+  height: 40px;
+  width: 280px;
+ 
+  margin: 10px 0;
+  padding: 15px;
+  font-size: 20px;
+  background: #000;
+}
+
+textarea{
+  height: 240px;
+  width: 280px;
+  color: white;
+  background: #000;
+  margin: 10px 0;
+  padding: 10px 10px;
+  font-size: 20px;
+   /* Provide space to type some text */
+   height: 5em;
+}
+
+.submit button{
+height: 40px;
+width: 100px;
+background: #0489EE;
+color: white;
+font-size: 20px;
+font-weight: 650;
+cursor: pointer;
+
+}
+
+::placeholder{
+  color: white;
+}
 /*store name section*/
 
 .main1{
@@ -935,7 +994,8 @@ footer .container {
   /* ensure padding doesn't cause images to wrap, it should be within the width rather than in addition */
   box-sizing: border-box;
   position: relative;
-  background-color: black;
+  background-color: brown;
+  z-index: -1;
 }
 
 .container-content .colorful{
